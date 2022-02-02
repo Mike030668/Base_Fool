@@ -46,7 +46,7 @@ class Make_players:
 
         # определение CARDS_4PLAYER
         while err_cards:
-            if not self.CARDS_4PLAYER:
+            if not self.CARDS_4PLAYER and self.CARDS_4PLAYER is not None:
                 try:
                     self.CARDS_4PLAYER = int(input(
                         f"Укажите количество карт выдаваемых на руки от {self.MINCARDS_4PLAER} до {self.MAXCARDS_4PLAER} включительно: "))
@@ -54,12 +54,14 @@ class Make_players:
                     print("Ошибка, укажите число карт")
                     pass
             else:
-                if not type(self.CARDS_4PLAYER) == int:
+                if self.CARDS_4PLAYER is None:
+                    pass
+                elif not type(self.CARDS_4PLAYER) == int:
                     print("Ошибка, укажите число карт")
                     self.CARDS_4PLAYER = None
                     pass
 
-            # проверка на вхождение в диапазон rfhn
+            # проверка на вхождение в диапазон
             if self.MINCARDS_4PLAER <= self.CARDS_4PLAYER <= self.MAXCARDS_4PLAER:
                 err_cards = False
             else:
@@ -99,7 +101,7 @@ class Make_players:
                         except:
                             print("Ошибка, укажите число роботов")
                             pass
-                else:  # если self.robots зздан то проверка
+                else:  # если self.robots задан то проверка
                     if type(self.robots) == int:
                         print(f'Количество роботов уже задано - {self.robots}')
                         err_r = False  # выход
@@ -302,7 +304,7 @@ class Make_game:
         self.BITA.name = 'Бита'
         self.POLE_IGRY.name = 'Игровое поле'
 
-    def __call__(self, players, playcoloda, kozir):
+    def __call__(self, players: object, playcoloda: object, kozir: object) -> object:
         self.go_game(players, playcoloda, kozir)
 
     def make_states(self, players):
@@ -789,7 +791,7 @@ class Durack():
 if __name__ == '__main__':
     # Инициализация игры
     game = Durack(card4plaer=0, humans=0, robots=3)
-    gaimers, playcoloda, kozir = game.init_game()
+    players, playcoloda, kozir = game.init_game()
 
     # Запуск игрового цикла
-    game.go_game(gaimers, playcoloda, kozir)
+    game.go_game(players, playcoloda, kozir)
