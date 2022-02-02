@@ -49,8 +49,7 @@ class Make_players:
             if not self.CARDS_4PLAYER:
                 try:
                     self.CARDS_4PLAYER = int(input(
-                        f"Укажите количество карт выдаваемых на руки от {self.MINCARDS_4PLAER} "
-                        f"до {self.MAXCARDS_4PLAER} включительно: "))
+                        f"Укажите количество карт выдаваемых на руки от {self.MINCARDS_4PLAER} до {self.MAXCARDS_4PLAER} включительно: "))
                 except:
                     print("Ошибка, укажите число карт")
                     pass
@@ -790,7 +789,7 @@ class Durack():
 
 if __name__ == '__main__':
     # Инициализация игры
-    game = Durack(card4plaer= 0, humans=0, robots=3)
+    game = Durack(card4plaer=0, humans=0, robots=3)
     gaimers, playcoloda, kozir = game.init_game()
 
     # Запуск игрового цикла
