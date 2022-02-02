@@ -73,8 +73,7 @@ class Make_players:
             # определение self.humans
             while err_h:
                 print(
-                    f"Количество участников (роботы и люди) должно быть в сумме не менее {self.MIN_PLAYERS} \
-                    и не более {self.MAX_PLAYERS}")
+                    f"Количество участников (роботы и люди) должно быть в сумме не менее {self.MIN_PLAYERS} и не более {self.MAX_PLAYERS}")
                 if not self.humans and self.humans != 0:  # если self.humans не зздан ранее
                     try:
                         self.humans = int(input('Введите количество игроков людей: '))
