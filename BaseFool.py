@@ -1,7 +1,7 @@
 import random
 import numpy as np
 import pandas as pd
-import self as self
+#import self as self
 
 
 class Make_players:
