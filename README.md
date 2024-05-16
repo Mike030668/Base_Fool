@@ -8,4 +8,4 @@ You have to answer on questions about:
 
 Or you can indicate these in process installation class Durack
 
-you can open in Colab - https://colab.research.google.com/drive/1c7sXB8jjr73fvmMP6wYtJxnLuzuJoOVP?usp=sharing
+you can open in [Colab](https://colab.research.google.com/github/Mike030668/Base_Fool/blob/main/Play_Base_Fool.ipynb)
